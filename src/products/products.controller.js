@@ -31,6 +31,7 @@ router
 
     .post('/', (req, res) => {
         try {
+            // console.log(req)
             const prd = req.body
             const addedPrd = ProductsService.add(prd)
             res.json(addedPrd.toPlainObject())

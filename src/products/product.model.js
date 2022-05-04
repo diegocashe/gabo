@@ -9,6 +9,10 @@ class Product {
         if(typeof id !== 'number'){
             throw new Error('id its not an number')
         }
+        
+        if(!id, !title, price === undefined, !thumbnail){
+            throw new Error('Incomplete data')
+        }
 
         this._id = id
         this._title = title
@@ -18,6 +22,9 @@ class Product {
 
     // metodo publico toJSON
     toPlainObject (){
+        if(!this._id, !this._title, this._price === undefined, !this._thumbnail){
+            throw new Error('Incomplete data')
+        }
         return {
             id: this._id,
             title: this._title,
@@ -31,6 +38,10 @@ class Product {
     }
 
     patchEntity({id, title, price, thumbnail}){
+        if(!id, !title, price === undefined, !thumbnail){
+            throw new Error('Incomplete data')
+        }
+
         this._id = id
         this._title = title
         this._price = price

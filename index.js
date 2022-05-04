@@ -1,13 +1,5 @@
-const PORT = process.env.PORT || 5000;
-const { server } = require('./app/server');
+const { app } = require('./src/config/server');
 
-try {
-  server()
-    .listen(PORT)
-    .on('listening', () => {
-      console.log('Listen on port', PORT);
-    });
-  // console.log('server on port', 2000)
-} catch (error) {
-  console.error('no se pudo manejar el error');
-}
+app.listen(app.get('port'), () => {
+    console.log(`Server on port ${app.get('port')}`)
+})
